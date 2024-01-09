@@ -1,9 +1,15 @@
 % Delta Modulation Example in Octave
 
 % Define the continuous analog signal
-t = linspace(0, 1, 1000);  % Time vector from 0 to 1 second
-analog_signal = sin(2 * pi * 5 * t);  % A sinusoidal signal as an example
+t = linspace(-5, 5, 1000);  % Time vector from 0 to 1 second
+% analog_signal = sin(2 * pi * 5 * t);  % A sinusoidal signal as an example
+% Set parameters for the sigmoid signal
+slope = 1;  % Slope of the sigmoid curve
+center = 0;  % Center of the sigmoid curve
 
+% Generate the sigmoid signal
+analog_signal = 1 ./ (1 + exp(-slope * (t - center)));
+%analog_signal = sin(2 * pi * 5 * t);
 % Sampling parameters
 fs = 100;  % Sampling frequency
 Ts = 1/fs; % Sampling period
