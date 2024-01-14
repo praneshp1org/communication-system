@@ -1,4 +1,3 @@
-% Time sampling where Step Size = 0.001
 t = 0:0.001:1;
 
 % Frequency of input or modulating signal
